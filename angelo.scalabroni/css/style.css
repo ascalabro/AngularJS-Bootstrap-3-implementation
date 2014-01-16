@@ -1,0 +1,98 @@
+@import url(http://fonts.googleapis.com/css?family=Nixie+One);
+@import url(http://fonts.googleapis.com/css?family=Voces);
+
+html,body{
+        
+	background: url('../images/bg.jpg');background-attachment:fixed;
+	font: 200 1em/1.7em "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	letter-spacing: .5px;
+}*{margin: 0; padding: 0; outline: none;}
+
+/* General Styles */
+header,footer,section,aside,nav,article{display: block;}
+h1,h2,h3,h4,h5,h6{margin: 0 0 .5em; line-height: 1.2em; font-weight: 200;}
+p,blockquote,pre,code,ul,ol,table{margin: 0 0 1em;}
+img,iframe{border: 0; max-width: 100%;}
+sup{font-size: 65%; vertical-align: .8ex;}
+
+
+.alignleft{float: left; margin: 5px 20px 20px 0;border-radius: 12px;}
+ img .alignleft{width:133px;height:244px;}
+.alignright{float: right; margin: 5px 0 20px 20px;}
+.aligncenter{text-align: center; margin: 0 auto;}
+
+.clear{clear: both;}
+
+.tabletOnly{display: none;}
+.mobile{display: none;}
+.desktop{display: block;}
+
+/* Grid */
+.one-half,.one-third,.two-thirds,.one-fourth,.threefourths{margin: 0 1% 2%; float: left;}
+.one-half{width: 49%;}
+.one-third{width: 32%;}
+.two-thirds{width: 66%;}
+.one-fourth{width: 23.5%;}
+.three-fourths{width: 74.5%;}
+.first{margin-left: 0 !important;}.last{margin-right: 0 !important;}
+
+.title {
+    top: 12px;
+    position: absolute;
+    left: 10px;
+}
+.my_info_top {
+    display: none;
+}
+
+/* General Structural Styles */
+header{font-family: 'Nixie One', cursive;cursor: default;width: 100%; float: left; margin: 0 0 1em; padding: 20px 0; background: url('../images/background.jpg'); color: #fff;height: 10px;}
+	header h1{clear: both; font-size: 56px; font-weight: 100; line-height: 1.2em; letter-spacing: 1px;}
+	header p{font-size: 24px; font-weight: 100; line-height: 1.5em;}
+        header nav{position:absolute;top: 10px;right: 10px;}
+        header nav ul{ color:white;}
+        header nav ul li {display: inline;list-style-type: none; padding: 0 12px;}
+        header nav ul li a { -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  /* ...and now for the proper property */
+  transition:.5s;color: rgb(183, 209, 209); text-decoration:none;font-size: 1.4em;font-family: inherit;}
+        header nav ul li a:hover{color:white;}
+        #content{width: 600px; max-width: 94%; margin: 0 auto;}
+	#content section{margin: 0 0 5em;}
+        #content section .contact_info{display:block;margin:0 46px;color:#343838;font-family: 'Voces', cursive;font-size: 1.32em;}
+	#content h2{padding-bottom: 5px; border-bottom: 2px solid #111;}
+	#content .piece{width: 31%; margin: 0 1%;}
+        article p{margin:0px}
+        
+        .std-form{padding:10px 0;}
+        .std-form .form-row {float: left;width: 100%;margin: 0 0 1em 0;display:block;}
+        .std-form .std-label {width: 35%;display: block;float: left;}
+        .std-form [type="text"], .std-form textarea, .std-form select {width: 61%;display: block;float: left;padding:0.4em}
+        .std-form [type="submit"] {float: right;padding: .3em 1em;margin: 0 23px;background-color: #111;border: 1px solid #444;color: #f0f0f0;cursor: pointer;
+border-radius: 3px;}
+        .ErrContainer{display:none;}
+        .ErrContainer li{list-style:none;color:red;}
+        #ty_msg{padding:12px;}
+        .bordered_content{float: left;border: 1px solid #444;width: 96%;margin: 0 2%;padding: 1em 2% 0; background-color: rgba(244, 244, 244, 0.76);}
+
+
+footer{clear: both; padding: 2em 0; font-size: 14px; text-align: center;}
+
+.wrapper{width: 94%; max-width: 1200px; margin: 0 auto;}
+
+@media screen and (max-width: 600px) {
+	html,body{font-size: .95em; line-height: 1.5em;}
+
+	.two-thirds{width: 100%; clear: both;}
+	.one-third{width: 48%;}
+	.first, .last{margin: 0 1% 2% !important; clear: none;}
+
+	header{margin: 0 0 2em;}
+	header #logo{width 100%; float: left; margin: 0 0 60px;}
+	header h1{clear: both; font-size: 36px; font-weight: 100; line-height: 1.2em; letter-spacing: 1px;}
+	header p{font-size: 18px; font-weight: 100; line-height: 1.5em;}
+
+	#content section{margin: 0 0 4em;}
+}

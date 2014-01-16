@@ -1,0 +1,11 @@
+DirectoryIndex index.html index.php parking-page.html
+
+Options +FollowSymLinks
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www\.cms.affableitsolutions\.com
+RewriteRule ^(.*)$ http://cms.affableitsolutions.com/$1 [R=301,L] 
+RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteRule .* - [L]
+</IfModule>
