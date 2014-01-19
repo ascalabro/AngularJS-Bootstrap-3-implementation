@@ -111,11 +111,15 @@ a:hover{
     padding:13px;
 }
 
+.form_container input {
+    padding: 3;
+}
+
 .form_container *{
     display:block;
 }
 
-.form_container button, .form_container input[type="submit"], .form_container input[type="reset"]{
+.form_container button, .form_container input[type="submit"], .form_container input[type="reset"], label{
     display:inline;
 }
 
@@ -123,9 +127,12 @@ a:hover{
     border:2px solid black;
 }
 
+.form_container input, .form_container textarea{
+    display: block;
+}
+
 .form_container .images_container img{
     width: 101%;
-    display: block;
 }
 
 .form_container input[type="file"] {
@@ -153,6 +160,10 @@ a:hover{
     margin: 12px;
 }
 
-.image_box input{
+.image_box label{
 display: inline;
+}
+
+.image_box input{
+    display:inline;
 }

@@ -54,13 +54,13 @@ function display_listing_form($listing_id = null){
         $output .= "<form id='listing_form' action='../lib/scripts/edit_listing.php' method='post'>
         <input type='hidden' name='isNewListing' value='FALSE'>";
     } else {
-        return FALSE;
+        new error_page(LISTING_NOT_FOUND);
     }
-    $output .= "<label for='brand'>Brand Name: </label><input type='text' name='brand' id='brand' value='" . ($listing_id ? $listing_assoc_array['brand_name'] : null) . "'>";
-    $output .= "<label for='title'>Title: </label><input size='74' type='text' name='title' id='title' value='" . ($listing_id ? $listing_assoc_array['title'] : null) . "'>";
-    $output .= "<label for='description'>Description: </label><textarea rows='6' cols='57' name='description' id='description'>" . ($listing_id ? $listing_assoc_array['description'] : null) . "</textarea>";
-    $output .= "<label for='price'>Price: </label><input type='text' name='price' maxlength='8' size='10' id='price' value='" . ($listing_id ? $listing_assoc_array['price'] : null) . "'><span style='left: -8px;position:relative;bottom: 23px;width: 0;'>$</span>";
-    $output .= "<label for='discount'>Discount: </label><input type='text' maxlength='2' size='3' name='discount' id='discount' value='" . ($listing_id ? $listing_assoc_array['discount'] : null) . "'><span style='left: 37px;position:relative;bottom: 22px;'>%</span>";
+    $output .= "<label for='brand'>Brand Name: </label><input type='text' name='brand' id='brand' value='" . ($listing_id ? $listing_assoc_array['brand_name'] : '') . "'>";
+    $output .= "<label for='title'>Title: </label><input size='74' type='text' name='title' id='title' value='" . ($listing_id ? $listing_assoc_array['title'] : '' ) . "'>";
+    $output .= "<label for='description'>Description: </label><textarea rows='6' cols='57' name='description' id='description'>" . ($listing_id ? $listing_assoc_array['description'] : '<h4>This is a great laptop.</h4>') . "</textarea>";
+    $output .= "<label for='price'>Price: </label><input type='text' name='price' maxlength='8' size='10' id='price' value='" . ($listing_id ? $listing_assoc_array['price'] : '175') . "'><span style='left: -8px;position:relative;bottom: 23px;width: 0;'>$</span>";
+    $output .= "<label for='discount'>Discount: </label><input type='text' maxlength='2' size='3' name='discount' id='discount' value='" . ($listing_id ? $listing_assoc_array['discount'] : '0') . "'><span style='left: 37px;position:relative;bottom: 24px;'>%</span>";
     $output .= "<input type='submit' value='Save' name='submit'><input type='reset' value='Reset' name='reset'></form>";
     if($listing_id){
         $listing_gallery = new Listing_Gallery($listing_assoc_array['default_img'], $listing_assoc_array['listing_id']);
