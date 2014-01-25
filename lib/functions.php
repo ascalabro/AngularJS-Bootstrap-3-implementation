@@ -45,12 +45,14 @@ function display_listing_form($listing_id = null){
         <input type='hidden' name='isNewListing' value='TRUE'>";
     } elseif(is_numeric($listing_id)) {
         global $public_connection;
-        $query = 'SELECT * FROM laptops WHERE listing_id = ' . $listing_id;
-        // this is the listing that is specified
-        $selected_listing_row = $public_connection->query($query);
-        // test if there was a query error.
-        confirm_query($selected_listing_row);
-        $listing_assoc_array = $selected_listing_row->fetch_assoc();
+        $listing_assoc_array = Array();
+        if($stmt = $public_connection -> prepare('SELECT * FROM laptops WHERE listing_id = ?')){
+            $stmt -> bind_param('i', $listing_id);
+            $stmt -> execute();
+            $stmt -> close();
+        } else {
+            echo "errorrs";
+        }
         $output .= "<form id='listing_form' action='../lib/scripts/edit_listing.php' method='post'>
         <input type='hidden' name='isNewListing' value='FALSE'>";
     } else {
@@ -73,7 +75,43 @@ function display_listing_form($listing_id = null){
         </div>
 EOF;
         return $output;
-    } 
+    }
+    
+    function fetch($result)
+{    
+    $array = array();
+    
+    if($result instanceof mysqli_stmt)
+    {
+        $result->store_result();
+        
+        $variables = array();
+        $data = array();
+        $meta = $result->result_metadata();
+        
+        while($field = $meta->fetch_field())
+            $variables[] = &$data[$field->name]; // pass by reference
+        
+        call_user_func_array(array($result, 'bind_result'), $variables);
+        
+        $array = array();
+        while($result->fetch())
+        {
+            
+            foreach($data as $k=>$v)
+                $array[$k] = $v;
+            
+            // don't know why, but when I tried $array[] = $data, I got the same one result in all rows
+        }
+    }
+    elseif($result instanceof mysqli_result)
+    {
+        while($row = $result->fetch_assoc())
+            $array[] = $row;
+    }
+    
+    return $array;
+}
 
     
 ?>
