@@ -1,12 +1,13 @@
 <?php
 include_once('lib/functions.php');
 include_once('lib/session.php');
-include_once('lib/constants.php');
+include_once('lib/config.php');
+include_once('lib/classes/forms/interface.php');
 
 if(!empty($_POST)){
     $form_data_obj = new form_data_obj($_POST);
-    if($form_data_obj->validateData()){
-        $form_data_obj->sendMail();
+    if($form_data_obj->validate()){
+        $form_data_obj->sendEmail(company_email,no_reply_email);
         } else {
             //if data is not valid when javascript is disabled(using jquery validator plugin), redirect user immediately
             redirect_to('contact.php');
@@ -15,14 +16,14 @@ if(!empty($_POST)){
     redirect_to('index.php');
 }
 
-class form_data_obj{
+class form_data_obj implements Contact_Form{
     public $fields_array;
     
     public function __construct($fields_array) {
         $this->fields_array = $fields_array;
     }
     
-    public function validateData(){
+    public function validate(){
         $errors = array();
         // test length of 'name' string
         if(strlen($this->fields_array['name']) > 99){
@@ -60,9 +61,8 @@ class form_data_obj{
         
     }
     
-    public function sendMail(){
-        $mail_to_send_to = company_email;
-        $headers = "From: " . no_reply_email;
+    public function sendEmail($send_to,$from){
+        $headers = "From: " . $from;
         $name = $this->fields_array['name'];
         $email = $this->fields_array['email'] ;
         $area_code = isset($this->fields_array['area_code']) ? $this->fields_array['area_code'] : 'N/A' ;
@@ -84,7 +84,7 @@ You are receiving this because a user has submitted the form on your contact pag
    Message: $message
 MSG;
                 
-        $a = mail( $mail_to_send_to, "Affable Website Comment Form Submission", $email_msg, $headers);
+        $a = mail( $send_to, "Affable Website Comment Form Submission", $email_msg, $headers);
         if ($a) {
             print("Message was sent, you can send another one");
         } else {

@@ -3,7 +3,7 @@ require_once('lib/functions.php');
 require_once('lib/classes/listing_model.php');
 require_once('lib/classes/listings_table.php');
 require_once('lib/classes/listing_page.php');
-include'head.php'; ?>
+include 'head.php'; ?>
         <style>
 
 .ui-tabs-vertical {
@@ -160,8 +160,8 @@ include'head.php'; ?>
     </div>
 	<span class='required_dir'>Required fields marked with <span class='required'>*</span></span>
       <form action="email_form.php" method='post' name='sendflag' id="contact_form" >
-               <div class='input_container'><label for="name" class='contact_label'><span class='label'>Your Name<span class="required">*</span>:</span></label>&nbsp;
-            <input id='name' title="Enter your first and/or last name." required type="text" data-type="input-textbox" name="name" autofocus size="20" value="" />
+               <div class='input_container'><label for="name" class='contact_label'><span class='label'>Your Name:</span></label>&nbsp;
+            <input id='name'  type="text" data-type="input-textbox" name="name" autofocus size="20" value="" />
           <br></div> <div class='input_container'><label for="email" class='contact_label'><span class='label'>Your Email<span class="required">*</span>:</span></label>&nbsp;
             <input id='email' title="Enter a valid email address." required type="text" data-type="input-textbox" name="email" size="20" style='margin-left:10px' value="" />
           <br></div> <div class='input_container'><label for="phone" class='contact_label'><span class='label'>Your Phone:</span></label>&nbsp;&nbsp;

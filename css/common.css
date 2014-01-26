@@ -259,7 +259,7 @@ text-decoration: underline;
 }
 #listing_page {
     border-collapse: collapse;
-    margin: 0;
+    margin: -5px;
     position: absolute;
     right: 13px;
     table-layout: fixed;

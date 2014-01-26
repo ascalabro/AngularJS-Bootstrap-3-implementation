@@ -1,9 +1,9 @@
 <?php
-require_once('/../functions.php');
-require_once('/../db_connection.php');
-require_once('activity_monitor.php');
-require_once('listing_model.php');
-require_once('listing_gallery.php');
+include_once('/../functions.php');
+include_once('/../db_connection.php');
+include_once('activity_monitor.php');
+include_once('listing_model.php');
+include_once('listing_gallery.php');
 
 class Listing_Page {
     public function __construct($listing_id,$isPublic) {

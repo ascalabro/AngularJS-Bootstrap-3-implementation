@@ -4,9 +4,6 @@
     // validate the form when it is submitted
     var validator = $("#contact_form").validate({
             rules: {
-                name: {
-                    required: true
-                },
                 email: {
                     required: true,
                     email: true

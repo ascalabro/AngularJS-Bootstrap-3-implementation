@@ -3,7 +3,7 @@
 // constants to be used througout application
 define("company_email", "affableit@gmail.com");
 define("no_reply_email","no-reply@affableitsolutions.com");
-
+define("angelo_email","angelo@affableitsolutions.com");
 
 
 define("DB_HOST","localhost");
