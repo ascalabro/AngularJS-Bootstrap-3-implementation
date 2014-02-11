@@ -32,16 +32,14 @@ class Listings_Table {
 EOF;
         // DISPLAY THE RETURNED DATA
         while ($listings_assoc_array = $listings_set->fetch_assoc()) {
-            //create new listing_obj for each property in $listings_set, FALSE tells constructor this is not a new listing
-            $listing_obj = new Listing($listings_assoc_array, FALSE);
             //output each listing to it's own row
             $listings_table .= "<tr>";
-            $listings_table .= "<td><a class='ajaxGet' href='{$listing_obj->get_listing_id()}'><img alt='computer repair, tampa, it, solutions, software, web design, laptop sales, laptops, used laptops, used computers, computer service, service' class='smalldefaultpic' src='" . $listing_obj->get_default_img() . "'></a></td>";
-            $listings_table .= "<td><a class='ajaxGet' href='{$listing_obj->get_listing_id()}'>" . ucfirst($listing_obj->get_brand_name()) . "</a></td>";
-            $listings_table .= "<td><a class='ajaxGet' href='{$listing_obj->get_listing_id()}'><span class='title'>" . $listing_obj->get_title() . "</span></a></td>";
-            $listings_table .= "<td><a class='ajaxGet' href='{$listing_obj->get_listing_id()}'>$" . $listing_obj->get_price() . "</a></td>";
-            $listings_table .= "<td><a class='ajaxGet' href='{$listing_obj->get_listing_id()}'>" . $listing_obj->get_change_date() . "</a></td>";
-            $listings_table .= "<td><a class='ajaxGet' href='{$listing_obj->get_listing_id()}'><input TYPE='button' VALUE='More Info' class='button'></a></td>";
+            $listings_table .= "<td><a class='ajaxGet' href='{$listings_assoc_array['listing_id']}'><img alt='computer repair, tampa, it, solutions, software, web design, laptop sales, laptops, used laptops, used computers, computer service, service' class='smalldefaultpic' src='" . $listings_assoc_array['default_img'] . "'></a></td>";
+            $listings_table .= "<td><a class='ajaxGet' href='{$listings_assoc_array['listing_id']}'>" . ucfirst($listings_assoc_array['brand_name']) . "</a></td>";
+            $listings_table .= "<td><a class='ajaxGet' href='{$listings_assoc_array['listing_id']}'><span class='title'>" . $listings_assoc_array['title'] . "</span></a></td>";
+            $listings_table .= "<td><a class='ajaxGet' href='{$listings_assoc_array['listing_id']}'>$" . $listings_assoc_array['price'] . "</a></td>";
+            $listings_table .= "<td><a class='ajaxGet' href='{$listings_assoc_array['listing_id']}'>" . $listings_assoc_array['last_change_date'] . "</a></td>";
+            $listings_table .= "<td><a class='ajaxGet' href='{$listings_assoc_array['listing_id']}'><input type='button' vale='More Info' class='button'></a></td>";
             $listings_table .= "</tr>";
         }
         $listings_table .= "</table><div style='clear:both;'></div>";
@@ -65,18 +63,17 @@ EOF;
 EOF;
         // DISPLAY THE RETURNED DATA
         while ($listings_assoc_array = $listings_set->fetch_assoc()) {
-            //create new listing_obj for each property in $listings_set, FALSE tells constructor this is not a new listing
-            $listing_obj = new Listing($listings_assoc_array, FALSE);
+            
             //output each listing to it's own row
             $listings_table .= "<tr>";
-            $listings_table .= "<td><img alt='computer repair, tampa, it, solutions, software, web design, laptop sales, laptops, used laptops, used computers, computer service, service' class='smalldefaultpic' src='../" . $listing_obj->get_default_img() . "'></td>";
-            $listings_table .= "<td>" . ucfirst($listing_obj->get_brand_name()) . "</td>";
-            $listings_table .= "<td><span class='title'>" . $listing_obj->get_title() . "</span></td>";
-            $listings_table .= "<td><span class='title'>" . $listing_obj->get_description() . "</span></td>";
-            $listings_table .= "<td>$" . $listing_obj->get_price() . "</td>";
-            $listings_table .= "<td>$" . $listing_obj->get_discount() . "</td>";
-            $listings_table .= "<td>" . $listing_obj->get_change_date() . "</td>";
-            $listings_table .= "<td><a href='?listing_id=" . $listing_obj->get_listing_id() . "'><input type='button' value='Edit' class='button'></a><input type='button' value='Delete' data-listing-id='" . $listing_obj->get_listing_id() . "'  class='button'></td>";
+            $listings_table .= "<td><img alt='computer repair, tampa, it, solutions, software, web design, laptop sales, laptops, used laptops, used computers, computer service, service' class='smalldefaultpic' src='../" . $listings_assoc_array['default_img'] . "'></td>";
+            $listings_table .= "<td>" . ucfirst($listings_assoc_array['brand_name']) . "</td>";
+            $listings_table .= "<td><span class='title'>" . $listings_assoc_array['title'] . "</span></td>";
+            $listings_table .= "<td><span class='title'>" . $listings_assoc_array['description'] . "</span></td>";
+            $listings_table .= "<td>$" . $listings_assoc_array['price'] . "</td>";
+            $listings_table .= "<td>$" . $listings_assoc_array['discount'] . "</td>";
+            $listings_table .= "<td>" . $listings_assoc_array['last_change_date'] . "</td>";
+            $listings_table .= "<td><a href='?listing_id=" . $listings_assoc_array['listing_id'] . "'><input type='button' value='Edit' class='editor_button'></a><a href='../lib/scripts/delete_listing.php?listing_id=" . $listings_assoc_array['listing_id'] . "'><input type='button' value='Delete' class='editor_button'></a></td>";
             $listings_table .= "</tr>";
         }
         $listings_table .= "</table><div style='clear:both;'></div>";

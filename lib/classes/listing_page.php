@@ -25,9 +25,8 @@ class Listing_Page {
     
     private static function displayPublicListingPage($selected_listing_row){
         $listing_assoc_array = $selected_listing_row->fetch_assoc();
-        $listing_obj = new Listing($listing_assoc_array ,FALSE);
         // ADD HIT TO HIT COUNTER for this listing
-        activity_monitor::addPageHit($listing_obj);
+        activity_monitor::addPageHit($listing_assoc_array['listing_id']);
         // DISPLAY THE RETURNED DATA
         $listing_page = <<<EOF
                 
@@ -36,14 +35,14 @@ class Listing_Page {
                     <td width='220px'>
                 <div id='listing_gallery'>     
 EOF;
-        $listing_gallery = new Listing_Gallery($listing_obj->get_default_img(), $listing_obj->get_listing_id());
+        $listing_gallery = new Listing_Gallery($listings_assoc_array['default_img'], $listings_assoc_array['listing_id']);
         $listing_page .= $listing_gallery->create_listing_gallery();
         $listing_page .= <<<EOF
                     </div>
                     </td>
                     <td width='100%' height='auto'>
-                       <span class='title'>{$listing_obj->get_title()}</span><br>
-                           <section class='description'>{$listing_obj->get_description()}</section>
+                       <span class='title'>{$listings_assoc_array['title']}</span><br>
+                           <section class='description'>{$listings_assoc_array['description']}</section>
                           </td>
                 </tr>
                 </table><div class='order_call_banner'></div>

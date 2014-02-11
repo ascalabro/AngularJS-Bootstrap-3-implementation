@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/jquery-ui.css" type="text/css" media="screen" />
 
-<script src="js/jquery-1.9.1.js" type="text/javascript"></script>  
+<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>  
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/jquery.address-1.5.min.js"></script>
 <script src="js/jquery.ba-bbq.min.js"></script>

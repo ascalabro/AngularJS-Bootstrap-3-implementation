@@ -26,16 +26,18 @@ padding: 1px;
 #listings_table img, #listing_page img {
     width: 152px;
 }
-#listings_table .button {
+#listings_table .editor_button {
     height: 75px;
-    width:100%;
+    width: 79%;
+    margin: 12px;
 }
 #listings_table input[type="button"], #listing_page input[type="button"] {
     background-color: #99CCFF;
     color: #08233E;
     cursor: pointer;
     font: 80% Futura,‘Century Gothic’,AppleGothic,sans-serif;
-    margin: 0 auto;
+    margin: 10px;
+    padding: 12px;
 }
 #listings_table input[type="button"]:hover, #listing_page input[type="button"]:hover {
     background-color: rgba(255, 204, 0, 0.8);
