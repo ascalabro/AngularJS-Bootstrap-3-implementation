@@ -1,5 +1,5 @@
 <?php
-include_once('../lib/session.php');
+include_once('../config.php');
 include_once('../lib/classes/listing_model.php');
 include_once('../lib/classes/listings_table.php');
 include_once('../lib/classes/listing_page.php');

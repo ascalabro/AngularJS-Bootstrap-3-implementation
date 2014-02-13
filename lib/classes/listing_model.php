@@ -114,10 +114,9 @@ class Listing implements listings_utils {
 
             /* execute query */
             $stmt->execute();
-            
+
             /* close statement */
             $stmt->close();
-            
         } else {
             /* Error */
             printf("Prepared Statement Error: %s\n", $data_connection->error);
@@ -138,24 +137,24 @@ class Listing implements listings_utils {
             // run update query on affaedco_listings.laptops
             $date = (string) date("Y-m-d");
             if ($stmt = $data_connection->prepare('UPDATE laptops SET brand_name=?, title=?, description=?, price=?, discount=?, last_change_date=?, hit_count=? WHERE listing_id=?')) {
-            /* bind parameters for markers */
-            $stmt->bind_param("sssdissi", $listing_assoc_array['brand'], $listing_assoc_array['title'], $listing_assoc_array['description'], $listing_assoc_array['price'], $listing_assoc_array['discount'], $date, $hit_count, $listing_assoc_array['listing_id']);
+                /* bind parameters for markers */
+                $stmt->bind_param("sssdissi", $listing_assoc_array['brand'], $listing_assoc_array['title'], $listing_assoc_array['description'], $listing_assoc_array['price'], $listing_assoc_array['discount'], $date, $hit_count, $listing_assoc_array['listing_id']);
 
-            /* execute query */
-            $stmt->execute();
-            echo 'updated yeahahehaeh';
-            /* close statement */
-            $stmt->close();
-            
-        } else {
-            /* Error */
-            printf("Prepared Statement Error: %s\n", $data_connection->error);
-        }
-        $data_connection->close();
-            
+                /* execute query */
+                $stmt->execute();
+                /* close statement */
+                $stmt->close();
+            } else {
+                /* Error */
+                printf("Prepared Statement Error: %s\n", $data_connection->error);
+            }
+            $data_connection->close();
         }
     }
 
+    public function delete_row($listing_id) {
+        
+    }
 
 }
 

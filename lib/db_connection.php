@@ -1,5 +1,5 @@
 <?php
-require_once('config.php');
+require_once('/../config.php');
 
     // CREATE A DATABASE CONNECTION
     // this is the connection to the database
