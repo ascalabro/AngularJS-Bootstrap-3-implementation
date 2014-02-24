@@ -9,8 +9,7 @@ $("document").ready(function() {
                 type: "POST",
                 url: script_url,
                 data: $("#listing_form").serialize(), // serializes the form's elements.
-                success: function(data)
-                {
+                success: function(data) {
                     alert("Listing Saved Successfully");
                     window.location.replace("?listing_id=" + data);
                 },
@@ -24,8 +23,7 @@ $("document").ready(function() {
                 type: "POST",
                 url: script_url,
                 data: $("#listing_form").serialize(), // serializes the form's elements.
-                success: function(data)
-                {
+                success: function(data) {
                     alert("Listing Saved Successfully");
                 },
                 error: function() {
@@ -36,7 +34,6 @@ $("document").ready(function() {
         } else {
             alert("Error");
         }
-        // avoid to execute the actual submit of the form.
     });
 
 });

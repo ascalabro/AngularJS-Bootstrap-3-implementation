@@ -23,4 +23,5 @@ define("LISTINGS_DB_NAME","affaedco_listings");
 define('ROOT_DIR', realpath(dirname(__FILE__)) .'/');
 define('APP_DIR', ROOT_DIR .'cms/');
 
+
 ?>

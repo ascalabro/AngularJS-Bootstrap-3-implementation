@@ -35,14 +35,14 @@ class Listing_Page {
                     <td width='220px'>
                 <div id='listing_gallery'>     
 EOF;
-        $listing_gallery = new Listing_Gallery($listings_assoc_array['default_img'], $listings_assoc_array['listing_id']);
+        $listing_gallery = new Listing_Gallery($listing_assoc_array['default_img'], $listing_assoc_array['listing_id']);
         $listing_page .= $listing_gallery->create_listing_gallery();
         $listing_page .= <<<EOF
                     </div>
                     </td>
                     <td width='100%' height='auto'>
-                       <span class='title'>{$listings_assoc_array['title']}</span><br>
-                           <section class='description'>{$listings_assoc_array['description']}</section>
+                       <span class='title'>{$listing_assoc_array['title']}</span><br>
+                           <section class='description'>{$listing_assoc_array['description']}</section>
                           </td>
                 </tr>
                 </table><div class='order_call_banner'></div>

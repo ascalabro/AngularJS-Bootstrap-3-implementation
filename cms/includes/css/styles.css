@@ -2,6 +2,10 @@
     outline: none;
 }
 
+body{
+    background-color: rgb(98, 98, 98);
+}
+
 
 header{
 background-color: rgba(244,233,133,0.4);
@@ -121,12 +125,16 @@ a:hover{
     display:block;
 }
 
-.form_container button, .form_container input[type="submit"], .form_container input[type="reset"], label{
+.form_container .image_box button{
     display:inline;
 }
 
+.form_container input[type="submit"], .form_container input[type="reset"], label{
+    width: 100%;
+}
+
 .form_container .images_container #edit_default_img{
-    border:2px solid black;
+    border:none;
 }
 
 .form_container input, .form_container textarea{
@@ -168,4 +176,12 @@ display: inline;
 
 .image_box input{
     display:inline;
+}
+
+#pending_new_images{
+    display:inline-block;
+}
+
+.preview_box{
+    margin:2em;
 }

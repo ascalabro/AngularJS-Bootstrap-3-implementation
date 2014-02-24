@@ -1,8 +1,8 @@
 <?php
-
+require 'Form.php';
 require 'interface.php';
 
-class simple_form implements Contact_Form {
+class personal_form extends Form implements Contact_Form {
 
     public $fields_array;
 

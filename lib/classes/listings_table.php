@@ -66,7 +66,7 @@ EOF;
             
             //output each listing to it's own row
             $listings_table .= "<tr>";
-            $listings_table .= "<td><img alt='computer repair, tampa, it, solutions, software, web design, laptop sales, laptops, used laptops, used computers, computer service, service' class='smalldefaultpic' src='../" . $listings_assoc_array['default_img'] . "'></td>";
+            $listings_table .= "<td><img alt='computer repair, tampa, it, solutions, software, web design, laptop sales, laptops, used laptops, used computers, computer service, service' class='smalldefaultpic' src='" . $listings_assoc_array['default_img'] . "'></td>";
             $listings_table .= "<td>" . ucfirst($listings_assoc_array['brand_name']) . "</td>";
             $listings_table .= "<td><span class='title'>" . $listings_assoc_array['title'] . "</span></td>";
             $listings_table .= "<td><span class='title'>" . $listings_assoc_array['description'] . "</span></td>";
