@@ -17,7 +17,7 @@ class Listing_Gallery{
     }
     
     public function create_listing_gallery(){
-        $gallery_default_img = "<img alt='computer repair, tampa, it, solutions, software, web design, laptop sales, laptops, used laptops, used computers, computer service, service' id='gallery-main-img' src='{$this->default_img_path}'>";
+        $gallery_default_img = "<img alt='computer repair, tampa, it, solutions, software, web design, laptop sales, laptops, used laptops, used computers, computer service, service' class='gallery-main-img' src='{$this->default_img_path}'>";
         $gallery_thumbnails = '';
         while($images_assoc_array = $this->assoc_images->fetch_assoc()){
             $gallery_thumbnails .= "<img alt='computer repair, tampa, it, solutions, software, web design, laptop sales, laptops, used laptops, used computers, computer service, service' class='gallery_thumb' src='" . $images_assoc_array['img_path'] . "'>";

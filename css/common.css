@@ -426,3 +426,19 @@ text-decoration: underline;
 .ErrContainer h4 {
     color: #000000;
 }
+
+.bodycopy{
+    font-family: Arial;
+}
+
+.bodycopy .header{
+    display: block;
+    font-size: 1.3em;
+    font-family: Belleza, Times New Roman;
+}
+
+.bodycopy article{
+    font-family: Radley, Arial;
+    padding: 10px;
+    line-height:170%;
+}

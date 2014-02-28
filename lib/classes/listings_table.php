@@ -26,8 +26,8 @@ class Listings_Table {
                 <td width="90px">Brand</td>
                 <td width="420px">Description</td>
                 <td width="60px">Price</td>
-                <td width="100px">Listing Date</td>
-                <td>Info</td>
+                <td width="120px">Listing Date</td>
+                <td width="100px">Info</td>
                 </tr>
 EOF;
         // DISPLAY THE RETURNED DATA
@@ -39,7 +39,7 @@ EOF;
             $listings_table .= "<td><a class='ajaxGet' href='{$listings_assoc_array['listing_id']}'><span class='title'>" . $listings_assoc_array['title'] . "</span></a></td>";
             $listings_table .= "<td><a class='ajaxGet' href='{$listings_assoc_array['listing_id']}'>$" . $listings_assoc_array['price'] . "</a></td>";
             $listings_table .= "<td><a class='ajaxGet' href='{$listings_assoc_array['listing_id']}'>" . $listings_assoc_array['last_change_date'] . "</a></td>";
-            $listings_table .= "<td><a class='ajaxGet' href='{$listings_assoc_array['listing_id']}'><input type='button' vale='More Info' class='button'></a></td>";
+            $listings_table .= "<td><a class='ajaxGet' href='{$listings_assoc_array['listing_id']}'><img src='images/morebutton.gif'></a></td>";
             $listings_table .= "</tr>";
         }
         $listings_table .= "</table><div style='clear:both;'></div>";
