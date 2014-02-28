@@ -4,37 +4,45 @@
  * 
  *******************/
 var options = {
-// Required. Called when a user selects an item in the Chooser.
+// Required. Called when a user selects an item(s) in the Chooser.
     success: function(files) {
-        alert($("#listing_id").val());
+//      var listing_id = $("#listing_id").val());
         var assoc_listing_id = $("#listing_id").val();
+        var new_files = [];
+        var img_path = '';
         for (var i = 0; i < files.length; i++) {
             var url = files[i].link;
             var img_path = url.split("/s/")[1];
-            var update_path = "https://dl.dropboxusercontent.com/s/" + img_path + "?dl=1";
-            $("#pending_new_images").append("<div class='preview_box'><img width='30%' data-assoc-listing-id='" + assoc_listing_id + "' class='preview' src='" + update_path + "'></div>");
+            img_path = "https://dl.dropboxusercontent.com/s/" + img_path + "?dl=1";
+            new_files.push({
+                url: img_path,
+                assoc_listing_id: assoc_listing_id
+            });
+            $("body").append("<div class='preview_box'><img width='30%' data-assoc-listing-id='" + assoc_listing_id + "' class='preview' src='" + img_path + "'></div>");
         }
-//        $.ajax({
-//            type: "POST",
-//            url: "../lib/scripts/dropbox_comm.php",
-//            data: {
-//                link: new_img_url,
-//                assoc_listing_id: assoc_listing_id
-//            },
-//            success: function(file) {
-//                var data = jQuery.parseJSON(file);
-//                $('.image_box').append("<div class='image_box'>" +
-//                        "<label>Path: </label><input type='text' disabled value='" + data.link + "'>" +
-//                        "<img data-assoc-listing-id='" + data.assoc_listing_id + "' class='edit_img' src='" + data.link + "'>" +
-//                        "<button data-img-id='" + data.img_id + "' class='delete_img_button' type='button'>Remove</button><button data-img-id='" + data.img_id + "' class='make_default_button' type='button'>Make Default</button>" +
-//                        "</div>");
-//            }
-//        });
+        $.ajax({
+            type: "POST",
+            url: "../lib/scripts/uploader.php",
+            data: {data: new_files
+            },
+            success: function() {
+                location.reload();
+//                var data = jQuery.parseJSON(files_json);
+//                for (var i = 0; i < data.length; i++){
+//                    $(".image_box:last").after(
+//                            "<div class='image_box'>" + 
+//                            "<label>Path: </label><input type='text' disabled value='" + data[i].url + "'>" +
+//                            "<img data-assoc-listing-id='" + data[i].assoc_listing_id + "' class='edit_img' src='" + data[i].url + "'>" +
+//                            "<button data-img-id='" + data[i].img_id + "' class='delete_img_button' type='button'>Remove</button><button data-img-id='" + data[i].img_id + "' class='make_default_button' type='button'>Make Default</button>" +
+//                            "</div>");
+//                }
+            }
+        });
     },
     // Optional. Called when the user closes the dialog without selecting a file
     // and does not include any parameters.
     cancel: function() {
-        //$('#no-image-error-text').show();
+        alert('No image(s) selected.');
     },
     // Optional. "preview" (default) is a preview link to the document for sharing,
     // "direct" is an expiring link to download the contents of the file. For more
@@ -77,9 +85,9 @@ $(document).ready(function() {
             success: function(data) {
                 var img = jQuery.parseJSON(data);
                 var new_url = img.new_image_url;
-                var assoc_listing_id = img.assoc_listing_id;
+//                var assoc_listing_id = img.assoc_listing_id;
                 $("#edit_default_img").attr("src", new_url);
-                //  setTimeout( function() { location.reload(); }, 0101); 
+//                setTimeout( function() { location.reload(); }, 0101); 
             }
         });
     });
@@ -104,31 +112,9 @@ $(document).ready(function() {
     });
 
 
-    var new_file = '';
     $("#choose_file").click(function() {
-        var new_file = Dropbox.choose(options);
-        $('body').append(new_file);
-        $("#add_img_form input #file_url").val().append(new_file);
-        /*$("input #file_url")$("body").append(file);*/
+        var new_files = Dropbox.choose(options);
     });
-    /*
-     * "add image" button click event handler
-     */
-    $('#add_img_form').submit(function() {
-        var patt = /[?=n]/m;
-        $.ajax({
-            type: "POST",
-            url: script_url,
-            data: $(this).serialize(),
-            success: function(data) {
-                alert("Image Added");
-                alert(data);
-            },
-            error: function() {
-                alert("Error saving image");
-            }
-        });
-        return FALSE;
-    });
+    
 
 });

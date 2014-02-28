@@ -7,6 +7,7 @@ interface Contact_Form {
     public function sendEmail($send_to, $from);
 }
 
+
 interface listings_utils {
 
     public function update_db_row($listing_assoc_array);
@@ -14,6 +15,11 @@ interface listings_utils {
     public function insert_new_listing($listing_assoc_array);
     
     public function delete_row($listing_id);
+}
+
+interface img_utils {
+    public function updateDefaultImage($new_image_url, $assoc_listing_id);
+    public function removeImage($img_id);
 }
 
 ?>

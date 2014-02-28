@@ -13,7 +13,7 @@
 abstract class Form {
     
     protected function showErrorPage(){
-        
+        echo 'You are here by error';
     }
 }
 

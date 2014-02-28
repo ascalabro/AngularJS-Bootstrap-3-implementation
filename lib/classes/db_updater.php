@@ -3,7 +3,7 @@
 include_once('/../../config.php');
 include_once('forms/interface.php');
 
-class db_updater implements listings_utils {
+class db_updater implements listings_utils, img_utils {
 
     private $data_connection;
 
@@ -113,6 +113,21 @@ class db_updater implements listings_utils {
         } else {
             /* Error */
             printf("Prepared Statement Error: %s\n", $this->data_connection->error);
+        }
+    }
+
+    public function add_dpbx_images($new_files = array()) {
+        $query = "INSERT INTO images ( img_path, assoc_listing_id) VALUES ( ?, ?);";
+        
+        foreach ($new_files as $file) { 
+            if ($stmt = $this->data_connection->prepare($query)) {
+                print_r($new_files);
+                $stmt->bind_param("si", $file['url'], $file['assoc_listing_id']);
+                $stmt->execute();
+                $stmt->store_result();
+                ($stmt->num_rows() > 0) ? print_r('success') : print_r('failure');
+                $stmt->close();
+            } 
         }
     }
 
