@@ -61,7 +61,7 @@ class listing_form extends Form {
             $listing_gallery = new Listing_Gallery($listing_assoc_array['default_img'], $listing_assoc_array['listing_id']);
             $output .= $listing_gallery->edit_listing_images();
             $output .= <<<EOF
-   <button id='choose_file'>Choose File From Dropbox</button>         
+   <button id='choose_file'></button>         
    </div>
 EOF;
         } 

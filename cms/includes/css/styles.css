@@ -19,6 +19,7 @@ padding: 1px;
     font-size: 0.8em;
 }
 #listings_table {
+background-color: floralwhite;
     border-collapse: collapse;
     margin: 0 auto;
     position: relative;
@@ -184,4 +185,11 @@ display: inline;
 
 .preview_box{
     margin:2em;
+}
+
+#choose_file {
+margin: 12px;
+width: 135;
+height: 25;
+background: url('../../assets/dpbxchButton.gif');
 }

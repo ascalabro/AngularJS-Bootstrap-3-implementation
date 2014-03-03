@@ -242,9 +242,4 @@ include 'head.php';
 
             </div>
 
-<?php include 'footer.php'; ?>                
-        </div> <!--END pageOutlineContainer-->
-    </div> <!--END pageContainer-->
-</body>
-<script type="text/javascript" src="js/common.js"></script>
-</html>
+<?php include 'footer.php'; ?>             
