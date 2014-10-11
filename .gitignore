@@ -2,3 +2,5 @@
 *.zip
 nbproject/
 angelo.scalabroni
+config.php
+lib/db_connection.php
