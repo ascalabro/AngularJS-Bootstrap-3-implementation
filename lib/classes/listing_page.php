@@ -26,7 +26,7 @@ class Listing_Page {
     private static function displayPublicListingPage($selected_listing_row){
         $listing_assoc_array = $selected_listing_row->fetch_assoc();
         // ADD HIT TO HIT COUNTER for this listing
-        activity_monitor::addPageHit($listing_assoc_array['listing_id']);
+//        activity_monitor::addPageHit($listing_assoc_array['listing_id']);
         // DISPLAY THE RETURNED DATA
         $listing_page = <<<EOF
                 
