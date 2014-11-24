@@ -1,67 +1,94 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 require_once('lib/functions.php');
 require_once('lib/classes/listing_model.php');
 require_once('lib/classes/listings_table.php');
 require_once('lib/classes/listing_page.php');
-include 'head.php';
 ?>
-<style>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    .ui-tabs-vertical {
-        background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-        border: medium none;
-        margin: 3px;
-        width: 55em;
-    }
-    .ui-tabs-vertical .ui-tabs-nav {
-        background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-        border: medium none;
-        float: left;
-        padding: 0;
-        width: 168px;
-    }
-    .ui-tabs-vertical .ui-tabs-nav li {
-        background-color: #56B2C4;
-        border: 1px solid #000000;
-        clear: left;
-        margin: 0 -1px 0.2em 0;
-        width: 100%;
-    }
-    .ui-tabs-vertical .ui-tabs-nav li a {
-        color: #000000;
-        display: block;
-        font-family: Belleza;
-        font-weight: bold;
-    }
-    .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
-        background-color: #BFCEE6;
-        border-right-width: 1px;
-        padding-bottom: 0;
-        padding-right: 0.1em;
-    }
-    .ui-tabs-vertical .ui-tabs-panel {
-        background-color: rgba(241, 254, 252, 0.7);
-        border-left: 2px dotted #000000;
-        float: right;
-        margin-bottom: 122px;
-        margin-left: 23px;
-        min-height: 525px;
-        padding: 0;
-        width: 44.5em;
-    }
-    .ui-tabs-vertical #tabs-2 *{
-        margin-left: 12px;
-    }
-    .ui-tabs-vertical .ui-tabs-panel #listings_table * {
-        text-indent: 0;
-    }
+        <title>Affable IT Solutions - Computer Sales, Services, Solutions - Tampa Bay</title>
+        
+        <link rel="shortcut icon" href="assets/img/product-small.ico">
+        
+        <link rel="stylesheet" href="css/jquery-ui.css" type="text/css" media="screen" />
 
-</style>
-</head>
-<body>
-    <div id="pageContainer">
-        <div id="pageOutlineContainer">
-<?php include 'banner.php'; ?>
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="assets/css/bootstrap-responsive.min.css" type="text/css" media="screen" />
+        
+        <script src="assets/lib/jquery-1.9.1.min.js" type="text/javascript"></script>  
+        <script src="assets/lib/bootstrap.min.js" type="text/javascript"></script>
+        
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/jquery.address-1.5.min.js"></script>
+        <script src="js/jquery.ba-bbq.min.js"></script>
+        <script src="js/jquery.timer.js"></script>
+
+
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+        <script type='text/javascript' src="js/forms.js"></script>
+        <style>
+
+            .ui-tabs-vertical {
+                background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+                border: medium none;
+                margin: 3px;
+                width: 55em;
+            }
+            .ui-tabs-vertical .ui-tabs-nav {
+                background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+                border: medium none;
+                float: left;
+                padding: 0;
+                width: 168px;
+            }
+            .ui-tabs-vertical .ui-tabs-nav li {
+                background-color: #56B2C4;
+                border: 1px solid #000000;
+                clear: left;
+                margin: 0 -1px 0.2em 0;
+                width: 100%;
+            }
+            .ui-tabs-vertical .ui-tabs-nav li a {
+                color: #000000;
+                display: block;
+                font-family: Belleza;
+                font-weight: bold;
+            }
+            .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
+                background-color: #BFCEE6;
+                border-right-width: 1px;
+                padding-bottom: 0;
+                padding-right: 0.1em;
+            }
+            .ui-tabs-vertical .ui-tabs-panel {
+                background-color: rgba(241, 254, 252, 0.7);
+                border-left: 2px dotted #000000;
+                float: right;
+                margin-bottom: 122px;
+                margin-left: 23px;
+                min-height: 525px;
+                padding: 0;
+                width: 44.5em;
+            }
+            .ui-tabs-vertical #tabs-2 *{
+                margin-left: 12px;
+            }
+            .ui-tabs-vertical .ui-tabs-panel #listings_table * {
+                text-indent: 0;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="pageContainer">
+            <a class='open-tab' href='#tabs-1'><img alt='computer repair, tampa, it, solutions, software, web design, laptop sales, laptops, used laptops, used computers, computer service, service' id='topbanner' src='images/output_6mJhzw.gif' ></a>
 
             <div class='content' >
                 <div id="tabs"><div class="trans-background"></div>
@@ -194,46 +221,46 @@ include 'head.php';
                                     </div>
                                 </td>
                                 <td class="bodycopy"> 
-                                    
+
                                     <span class="header">Custom Programming</span>
                                     <article>&nbsp;75.00 per hour</article>
-                                    
+
                                     <span class="header">Content Editing </span>
                                     <article>(text only)<br>&nbsp;35.00 per hour</article>
-                                    
+
                                     <span class="header">Email</span>
                                     <article> (Up to 100 Corporate Email Boxes)<br>&nbsp;100.00 Yearly</article>
-                                        
+
                                     <span class="header">Search Engine Optimization</span>
                                     <article>Monthly re submission to all search 
-                                            engines and any new relevant search engine or directory<br>
-                                            &nbsp;150.00 Yearly</article>
-                                    
+                                        engines and any new relevant search engine or directory<br>
+                                        &nbsp;150.00 Yearly</article>
+
                                     <span class="header">Form Page</span>
                                     <article>&nbsp;100.00</article>
-                                    
+
                                     <span class="header">Business Core Site</span>
                                     <article>&nbsp;Design and code a four page web 
-                                            site, 2.5 hours design time, Approximately 800 words, 
-                                            Sixteen Images (digital), Host site on Level one server 
-                                            backed up every 24 hours, full ftp privileges. 24 hour 
-                                            premium customer support. Guaranteed up time.<br>
-                                            &nbsp;690.00 Yearly</article>
+                                        site, 2.5 hours design time, Approximately 800 words, 
+                                        Sixteen Images (digital), Host site on Level one server 
+                                        backed up every 24 hours, full ftp privileges. 24 hour 
+                                        premium customer support. Guaranteed up time.<br>
+                                        &nbsp;690.00 Yearly</article>
                                     <span class="header">Content Management System</span>
                                     <article>&nbsp;Add a custom content management system to your website
                                         to allow you, the client to control what goes on your website. Post your pictures
                                         to your own website.<br>
-                                            &nbsp;150+ Yearly</article>
-                                    
+                                        &nbsp;150+ Yearly</article>
+
 <!--                                    <span>All service must be canceled in writing within 30 days of 
-                                            termination date of this contract or contract will 
-                                            automatically renew at the guaranteed renewal price.</span>-->
+        termination date of this contract or contract will 
+        automatically renew at the guaranteed renewal price.</span>-->
                                 </td>
                             </tr>
                         </table>
 
                         <a href='http://angelo.scalabroni.affableitsolutions.com'><img src='images/visitangelo.png'/></a>
-                        
+
                     </div>
                     <div id="tabs-5">
                         <script src="js/prod_scripts.js"></script>
@@ -242,4 +269,14 @@ include 'head.php';
 
             </div>
 
-<?php include 'footer.php'; ?>             
+            <div id="footer"><center>
+                    <div class="links">
+                        <a class='open-tab' href="#tabs-1">Home</a>  <a class='open-tab' href="#tabs-2">Services</a>  <a class='open-tab' href="#tabs-3">Contact</a>  <a class='open-tab' href="#tabs-4">Website Design</a> <a class='open-tab' href="products.php">Used Computers</a> <a href="http://www.cms.affableitsolutions.com">Log In</a> 
+                    </div>
+                    <span style='font-size:.9em;margin:0 auto;'>Copyright 2013 Affable IT Solutions</span>
+            </div>                
+        </div> <!--END pageOutlineContainer-->
+    </div> <!--END pageContainer-->
+</body>
+<script type="text/javascript" src="js/common.js"></script>
+</html>         

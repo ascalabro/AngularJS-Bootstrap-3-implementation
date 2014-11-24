@@ -1,4 +1,4 @@
-
+@import "http://fonts.googleapis.com/css?family=Viga";
 @import "http://fonts.googleapis.com/css?family=Belleza";
 @import "http://fonts.googleapis.com/css?family=GFS+Didot";
 @import "http://fonts.googleapis.com/css?family=Radley";
@@ -442,3 +442,27 @@ text-decoration: underline;
     padding: 10px;
     line-height:170%;
 }
+
+ #footer{
+/*        position:absolute;
+        bottom:0px;*/
+        height:auto;
+        width:100%;
+        background-color:#999999;
+    }
+    
+    #footer *{
+        padding:2px;
+    }
+    
+    #footer a{
+        text-decoration: none;
+        font-family: Viga, Arial;
+        border:1px solid black;
+        padding:3px;
+    }
+    
+    #footer .links{
+        padding:15px 3px 10px 3px;
+        position:relative;
+    }
