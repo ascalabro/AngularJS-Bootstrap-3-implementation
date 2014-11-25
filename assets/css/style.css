@@ -1,17 +1,18 @@
-@import "http://fonts.googleapis.com/css?family=Viga";
+/*@import "http://fonts.googleapis.com/css?family=Viga";
 @import "http://fonts.googleapis.com/css?family=Belleza";
 @import "http://fonts.googleapis.com/css?family=GFS+Didot";
-@import "http://fonts.googleapis.com/css?family=Radley";
+@import "http://fonts.googleapis.com/css?family=Radley";*/
 body {
-    background: url("../images/670[1].gif");
+    background-color: #DDDADA;
 }
 * {
-    list-style-type: circle;
+    /* list-style-type: circle; */
     outline: medium none;
 }
 #pageContainer {
     height: 100%;
-    width: 1288px;
+    width: 1251px;
+    margin: 0 auto;
 }
 #pageOutlineContainer {
     background-color: #E7F0F3;
@@ -29,7 +30,7 @@ a:link, a:visited {
     text-align: center;
 }
 .content {
-    background: none repeat scroll 0 0 #E7F0F3;
+    /* background: none repeat scroll 0 0 #E7F0F3; */
     font-family: Radley,serif;
     margin: 0 auto;
     min-height: 445px;
@@ -212,7 +213,7 @@ text-decoration: underline;
     background-color: #99CCFF;
     color: #08233E;
     cursor: pointer;
-    font: 80% Futura,‘Century Gothic’,AppleGothic,sans-serif;
+    font: 80% Futura,ÃƒÂ¯Ã‚Â¿Ã‚Â½Century GothicÃƒÂ¯Ã‚Â¿Ã‚Â½,AppleGothic,sans-serif;
     margin: 0 auto;
 }
 #listings_table input[type="button"]:hover, #listing_page input[type="button"]:hover {
@@ -266,7 +267,7 @@ text-decoration: underline;
     table-layout: fixed;
     top: 13px;
     width: 775px;
-    
+
 }
 #listing_page td * {
     position: relative;
@@ -334,81 +335,85 @@ text-decoration: underline;
     width: 144px;
 }
 
-#main_menu{
-   background: none;
-   margin: 0 auto 133px 54px;}
+.content{
+   padding: 33px;
+   margin: 0 auto;
+   width: 65%;
+}
 
-#main_menu dl {
+.content dl {
     float: left;
     /* margin-right: 2em; */
-    width: 298px;
+    width: 260px;
     padding: 29px 29px 0px 11px;
     box-shadow: 0 0 0 #00FF99 inset, 1px 1px 5px #999999;
     margin:0;
     background-color: rgba(255, 255, 255, 0.67);
 }
 
-#main_menu dl:hover {
+.content dl:hover {
     background-color:white;
 }
 
-#main_menu dt {
+.content dt {
     font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 0.7em;
     padding-bottom: 12px;
 }
-#main_menu dt a {background-color:white;
+.content dt a {background-color:white;
     font-family: 'GFS Dot',sans-serif;background-color: #FFFFFF;
 }
-#main_menu dd {
-    
+.content dd {
+
     /* background: red; */
     background: none no-repeat scroll left top rgba(0, 0, 0, 0);
     color: #444444;
     line-height: 1.5em;
     margin: 0 0em 2em 0em;
-    padding-left: 3.4em;
+
+
+    padding-left: 4.4em;
     width: 250px;
 }
-#main_menu dd a:hover {
+.content dd a:hover {
     text-decoration: underline;
 }
-#main_menu dd.promotional1 {
+.content dd.promotional1 {
     background-image: url("../images/productsmall.gif");
 }
-#main_menu dd.promotional2 {
+.content dd.promotional2 {
     background-image: url("../images/communicate.gif");
 }
-#main_menu dd.promotional3 {
+.content dd.promotional3 {
     background-image: url("../images/compservsmall.gif");
 }
-#main_menu dd.promotional4 {
+.content dd.promotional4 {
     background-image: url("../images/communicate.gif");
 }
-#main_menu dd.promotional5 {
+.content dd.promotional5 {
     background-image: url("../images/wwwglobesmall.gif");
 }
-#main_menu dd.promotional6 {
+.content dd.promotional6 {
     background-image: url("../images/communicate.gif");
 }
-#main_menu .label {
+.content .label {
     font-weight: bolder;
 }
-#main_menu {
+.content {
 }
-#main_menu a:link:not(.header_link), #main_menu a:visited:not(.header_link) {
+.content a:link:not(.header_link), .content a:visited:not(.header_link) {
     color: #0000FF;
 }
-#main_menu .header_link {
-    background-color: white;
+.content .header_link {
+    /* background-color: white; */
     border-radius: 4px;
     box-shadow: 0 0 0 #00FF99 inset, 1px 1px 5px #999999;
     padding: 12px;
 }
 
-#main_menu a.header_link:hover{
-    border:0;    
+.content a.header_link:hover{
+    border:0;
 }
 .ErrContainer {
     border: 2px dotted #000000;
@@ -450,19 +455,54 @@ text-decoration: underline;
         width:100%;
         background-color:#999999;
     }
-    
+
     #footer *{
         padding:2px;
     }
-    
+
     #footer a{
         text-decoration: none;
         font-family: Viga, Arial;
         border:1px solid black;
         padding:3px;
     }
-    
+
     #footer .links{
         padding:15px 3px 10px 3px;
         position:relative;
     }
+
+.header,
+.marketing,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+.container {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}

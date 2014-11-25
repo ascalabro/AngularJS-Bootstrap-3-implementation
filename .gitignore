@@ -1,5 +1,6 @@
 #Ignore the following
 *.zip
+backup/
 nbproject/
 angelo.scalabroni
 config.php
