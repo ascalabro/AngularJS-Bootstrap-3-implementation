@@ -4656,7 +4656,7 @@ a.badge:focus {
   }
   .jumbotron h1,
   .jumbotron .h1 {
-    font-size: 63px;
+    font-size: 52px;
   }
 }
 .thumbnail {
@@ -4858,7 +4858,7 @@ a.thumbnail.active {
   margin-top: 15px;
 }
 .media:first-child {
-  margin-top: 0;
+  /* margin-top: 0; */
 }
 .media-right,
 .media > .pull-right {
@@ -6330,4 +6330,4 @@ button.close {
     display: none !important;
   }
 }
-/*# sourceMappingURL=bootstrap.css.map */
+/*# sourceMappingURL/=bootstrap.css.map */
