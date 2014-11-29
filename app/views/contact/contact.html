@@ -1,0 +1,34 @@
+<div class='contextHolder' ><span style='font-weight:800;text-decoration: underline;'>Affable IT Solutions</span> <br>
+    <span>Phone:</span>(813) 644-2080<br>
+    <span>Email:</span> info@affableitsolutions.com</div>
+
+<div class='contact_form_container' >
+    <h3 style='margin:13px;'>Ask us ANYTHING! or send us some feedback. We'd love to hear what you think about us.</h3>
+    <h4 style='text-align: center;padding:10px'>Don't worry we won't redistribute or sell your email address and you will not receive any annoying emails from us either.</h4>
+    <div class="ErrContainer">
+        <h4>There are some errors in your form, see below for details.</h4>
+        <ol>
+        </ol>
+    </div>
+    <span class='required_dir'>Required fields marked with <span class='required'>*</span></span>
+    <form action="email_form.php" method='post' name='sendflag' id="contact_form" >
+        <div class='input_container'><label for="name" class='contact_label'><span class='label'>Your Name:</span></label>&nbsp;
+            <input id='name'  type="text" data-type="input-textbox" name="name" autofocus size="20" value="" />
+            <br></div> <div class='input_container'><label for="email" class='contact_label'><span class='label'>Your Email<span class="required">*</span>:</span></label>&nbsp;
+            <input id='email' title="Enter a valid email address." required type="text" data-type="input-textbox" name="email" size="20" style='margin-left:10px' value="" />
+            <br></div> <div class='input_container'><label for="phone" class='contact_label'><span class='label'>Your Phone:</span></label>&nbsp;&nbsp;
+            <input title="Enter a valid area code." type="text" data-type="input-textbox" name="area_code" maxlength="3"  id='area_code' style='margin-left:9px' size="2" value="" />&nbsp;&nbsp;-<input title="Please enter a valid phone number." maxlength="7" id='phone_number' type="text" data-type="input-textbox" style='margin-left:4px' name="phone_number" size="6" value="" /><span class="optional">&nbsp;&nbsp;(optional)</span><br> 
+        </div><div style='clear:both'></div><div class='input_container'><label for="category" class='contact_label'><span class='label'>Interests</span> : (check what you're interested in)</label><br>
+            <input type='checkbox' name='interests[]' id='field_3_0' style='margin-top:14px;' value="Sales"   class='form_checkbox' ><label class='form_choice_text' > Sales</label><br />	
+            <input type='checkbox' name='interests[]' id='field_3_1'  value="Home Services"   class='form_checkbox' ><label class='form_choice_text' > Home Services</label><br />	
+            <input type='checkbox' name='interests[]' id='field_3_2'  value="Business Services"   class='form_checkbox' ><label class='form_choice_text'> Business Services</label><br />	
+            <input type='checkbox' name='interests[]' id='field_3_3'  value="Virus Removal"   class='form_checkbox' ><label class='form_choice_text' > Virus Removal</label><br />	
+            <input type='checkbox' name='interests[]' id='field_3_5'  value="PC Repair"   class='form_checkbox' ><label class='form_choice_text' > PC Repair</label><br />	
+            <input type='checkbox' name='interests[]' id='field_3_6'  value="Web Design"   class='form_checkbox' ><label class='form_choice_text' > Web Design</label><br />	
+
+        </div> <div class='input_container'><span class='label'>Comment or Question<span class="required">* </span>:</span></label><textarea title="Enter a comment or question in the large text field." placeholder="Do you service my area?" type="text" name="text" cols="35" rows="4" class="select_category" id="gen_ques"></textarea>
+        </div><div style='clear:both'></div> 
+        <input type='reset' id='reset' class='reset_button' value='Reset' ><input type="submit" name="submit" value="Send" id='submit_button' class="submit_button" />
+    </form>
+</div>
+<div class="small_call_banner"></div>
