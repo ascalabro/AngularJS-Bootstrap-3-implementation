@@ -1,5 +1,10 @@
-<ul>
-  <li ng-repeat="listing in listings track by $index">
-    <a href="#/{{listing.id}}">{{listing.title}}</a>
-  </li>
-</ul>{{firstName}}
+<h3>Categories</h3>
+{{firstName}}
+
+<ul class="nav nav-pills">
+    <li  role="presentation" class="active"><a href="#">Laptops</a></li>
+    <li  role="presentation"><a href="#">Other Category</a></li>
+</ul>
+<ui-view>
+
+</ui-view>

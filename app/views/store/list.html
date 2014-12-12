@@ -1,0 +1,10 @@
+
+
+<ul class="list-unstyled thumbnails">
+              <li ng-repeat="listing in listings track by $index" class="span3">
+                <a href="#" class="thumbnail">
+                  <img ng-src="{{listing.default_img}}"/>
+                  {{listing.title}}
+                </a>
+              </li>
+            </ul>
