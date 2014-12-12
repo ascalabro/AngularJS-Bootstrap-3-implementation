@@ -503,3 +503,8 @@ text-decoration: underline;
     border-right: 1px solid black;
     border-left: 1px solid black;
 }
+
+.dropdown:hover {
+    cursor: pointer;
+    cursor: hand;
+}
