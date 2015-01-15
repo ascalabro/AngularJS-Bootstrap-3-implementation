@@ -1,10 +1,15 @@
+<div class="row">
+    <div ng-repeat="listing in listings track by $index" class="col-sm-6 col-md-4" >
+        <a ui-sref="store.listing({listing_id: listing.id})" class="thumbnail">
+            <div class="thumbnail">
+                <img width="100" ng-src="{{listing.default_img}}" alt="...">
+                <div class="caption">
+                    <h3>{{listing.title}}</h3>
+                    <p>${{listing.price}}</p>
+                    <p><!--<a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a>--></p>
+                </div>
+            </div>
 
-
-<ul class="list-unstyled thumbnails">
-              <li ng-repeat="listing in listings track by $index" class="span3">
-                <a href="#" class="thumbnail">
-                  <img ng-src="{{listing.default_img}}"/>
-                  {{listing.title}}
-                </a>
-              </li>
-            </ul>
+        </a>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="mainApp">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -15,7 +15,7 @@
         <!--<script src="assets/js/common.js" type="text/javascript"></script>!-->
 
     </head>
-    <body ng-app="mainApp">
+    <body>
         <!--<div id="pageContainer">!-->
         <div class='container' >
             <a class='open-tab' ui-sref="home"><img style="width:100%;" alt='computer repair, tampa, it, solutions, software, web design, laptop sales, laptops, used laptops, used computers, computer service, service' id='topbanner' src='assets/images/output_6mJhzw.gif' ></a>
@@ -55,7 +55,7 @@
                             <li class="dropdown">
                                 <a href="store" class="dropdown-toggle" data-toggle="dropdown" role="button" >Store <!--<span class="caret"></span>!--></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a ui-sref="store.list({ type: 'laptops' })">Used Laptops</a></li>
+                                    <li ng-class="{active: $state.includes('store.list.computers')}"><a ui-sref="store.list({ type: 'computers' })">Used Laptops</a></li>
                                     <li class="divider"></li>
                                     <li class="dropdown-header">Nav header</li>
                                     <li><a href="#">Separated link</a></li>
@@ -84,12 +84,15 @@
 
         <script src="assets/lib/angular.min.js" type="text/javascript"></script>
         <script src="assets/lib/angular-ui-router.js" type="text/javascript"></script>
-        <!-- Include main angular app file !-->
+        <!-- Include main angular app files !-->
+        <script src="app/config.js" type="text/javascript"></script>
         <script src="app/app.main.js" type="text/javascript"></script>
         <!-- Include controllers files !-->
         <script src="app/controllers/webDesignCtrl.js" type="text/javascript"></script>
         <script src="app/controllers/storeMainCtrl.js" type="text/javascript"></script>
         <script src="app/controllers/storeListingsCtrl.js" type="text/javascript"></script>
+        <script src="app/controllers/storeListingDetailCtrl.js" type="text/javascript"></script>
+        <!--<script src="app/controllers/storeCategoryCtrl.js" type="text/javascript"></script>!-->
         <!-- Include services files !-->
         <script src="app/services/listingsFactory.js" type="text/javascript"></script>
     </body>

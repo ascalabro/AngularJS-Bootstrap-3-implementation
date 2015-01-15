@@ -1,6 +1,6 @@
 
 /*
- * These global constants will be used to save text
+ * These global constants will be used to save typing
  */
 VIEW_PATH = 'app/views';
 
@@ -57,19 +57,14 @@ angular.module('mainApp', [
                         controller: 'storeMainCtrl'
                     })
                     .state('store.list', {
-                        url: '/list/{type}',
+                        url: '/list/{category_id}',
                         parent: 'store',
+                        category_id: '{category_id}',
                         templateUrl: VIEW_PATH + '/store/list.html',
                         controller: 'storeListingsCtrl'
                     })
-                    .state('store.list.laptops', {
-                        url: '/laptops',
-                        parent: 'store.list',
-                        templateUrl: VIEW_PATH + '/store/laptops.html',
-                        controller: 'storeMainCtrl'
-                    })
                     .state('store.listing', {
-                        url: '/:id',
+                        url: '/listing/:listing_id',
                         parent: 'store',
                         templateUrl: VIEW_PATH + '/store/listing.html',
                         controller: 'storeListingDetailCtrl'

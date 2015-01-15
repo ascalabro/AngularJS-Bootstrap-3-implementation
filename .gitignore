@@ -4,5 +4,5 @@ backup/
 app/temp/
 nbproject/
 angelo.scalabroni
-config.php
+config.js
 lib/db_connection.php

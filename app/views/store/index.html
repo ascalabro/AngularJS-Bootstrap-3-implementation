@@ -1,10 +1,14 @@
 <h3>Categories</h3>
 {{firstName}}
 
-<ul class="nav nav-pills">
-    <li  role="presentation" class="active"><a href="#">Laptops</a></li>
-    <li  role="presentation"><a href="#">Other Category</a></li>
-</ul>
+<div >
+    <ul class="nav nav-pills">
+        <li ng-repeat="category in categories track by $index" role="presentation" ng-class="{active: $state.category_id === category.id}">
+            <a ui-sref="store.list({category_id: category.id})" class="thumbnail">{{category.name}}</a>
+        </li>
+    </ul>
+</div>
+<hr>
 <ui-view>
 
 </ui-view>

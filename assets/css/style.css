@@ -54,7 +54,7 @@ a:link, a:visited {
     width: 155px;
 }
 .active {
-    background-color: buttonhighlight;
+    background-color: rgb(226, 232, 233);
     color: #FF0000;
 }
 .servicesp {
