@@ -1,5 +1,5 @@
 angular.module('mainApp').controller('storeListingDetailCtrl', function($scope, $stateParams, listingsFactory) {
-    listingsFactory.find($stateParams.listing_id, function(listing) {
+    listingsFactory.getListingDetail($stateParams.listing_id, function(listing) {
         $scope.listing = listing;
     });
     $scope.firstName='Jaaaoahdn';
