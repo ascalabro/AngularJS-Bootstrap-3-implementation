@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        <title>Affable IT Solutions - Computer Sales, Services, Solutions - Tampa Bay</title>
+        <title>{{pageTitle}}</title>
 
         <link rel="shortcut icon" href="assets/img/product-small.ico">
 
@@ -82,11 +82,13 @@
 
         <!-- </div>!-->
 
+        <!-- Include lib files !-->
         <script src="assets/lib/angular.min.js" type="text/javascript"></script>
         <script src="assets/lib/angular-ui-router.js" type="text/javascript"></script>
         <script src="assets/lib/angular-resource.min.js" type="text/javascript"></script>
         <!-- Include main angular app files !-->
         <script src="app/app.main.js" type="text/javascript"></script>
+        <script src="app/app.service.js" type="text/javascript"></script>
         <script src="app/config.js" type="text/javascript"></script>
         <!-- Include controllers files !-->
         <script src="app/controllers/webDesignCtrl.js" type="text/javascript"></script>
@@ -94,7 +96,8 @@
         <script src="app/controllers/storeListingsCtrl.js" type="text/javascript"></script>
         <script src="app/controllers/storeListingDetailCtrl.js" type="text/javascript"></script>
         <!-- Include services files !-->
-        <script src="app/services/listingsFactory.js" type="text/javascript"></script>
+        <script src="app/services/listingFactory.js" type="text/javascript"></script>
+        <script src="app/services/categoryFactory.js" type="text/javascript"></script>
         <!-- Include filters files !-->
         <script src="app/filters/inSlicesOf.js" type="text/javascript"></script>
     </body>

@@ -1,9 +1,9 @@
 <h3>Categories</h3>
 {{firstName}}
-
 <div >
-    <ul class="nav nav-pills">
-        <li ng-repeat="category in categories track by $index" role="presentation" ng-class="{active: $state.category_id === category.id}">
+    <ul class="nav nav-tabs">
+        <li role="presentation"><a ui-sref="store.list({category_id: 0})" class="thumbnail">All Categories</a></li>
+        <li ng-repeat="category in categories track by $index" role="presentation" ui-sref-active="active"  >
             <a ui-sref="store.list({category_id: category.id})" class="thumbnail">{{category.name}}</a>
         </li>
     </ul>

@@ -1,7 +1,4 @@
-angular.module('mainApp').controller('storeListingsCtrl', function($scope, $stateParams, listingsFactory) {
-    $scope.firstName = 'Joahnd';
-
-    listingsFactory.getActiveListings($stateParams.category_id, function(listings) {
-        $scope.listings = listings;
-    });
+app.controller('storeListingsCtrl', function($scope, $stateParams, listingFactory) {
+    $scope.firstName = 'storeListingsCtrl firstname';
+    $scope.listings = listingFactory.list.byCategory({category_id: $stateParams.category_id});
 });;
