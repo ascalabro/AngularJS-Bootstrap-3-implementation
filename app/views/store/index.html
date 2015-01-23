@@ -1,14 +1,25 @@
+<!-- Begin categories navigation !-->
 <h3>Categories</h3>
-{{firstName}}
 <div >
     <ul class="nav nav-tabs">
-        <li role="presentation"><a ui-sref="store.list({category_id: 0})" class="thumbnail">All Categories</a></li>
+        <li ui-sref-active="active" role="presentation"><a ui-sref="store.list({category_id: 0})" class="thumbnail">All Categories</a></li>
         <li ng-repeat="category in categories track by $index" role="presentation" ui-sref-active="active"  >
             <a ui-sref="store.list({category_id: category.id})" class="thumbnail">{{category.name}}</a>
         </li>
     </ul>
 </div>
-<hr>
-<ui-view>
+<!-- End categories navigation !-->
+<!-- Begin content container !-->
+<div class="panel ">
+    <!-- Begin breadcrumb container !-->
+    <div class="panel-heading">
+        <ul class="breadcrumb"> <li><a href="#">All</a></li> <li class="active">{{state.name}}</li> </ol>
+    </div>
+    <!-- End breadcrumb container !-->
+    <div class="panel-body">
+        <ui-view>
 
-</ui-view>
+        </ui-view>
+    </div>
+</div>
+<!-- End content container !-->
