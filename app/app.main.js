@@ -21,8 +21,8 @@ var app = angular.module('mainApp', [
                         .state('computerServices', {
                             url: '/computerServices',
                             templateUrl: app.config.viewPath + '/computerServices/index.html',
-                            controller: function($scope, $state) {
-                                $scope.title = 'Computer Services';
+                            controller: function($scope, $state, $rootScope) {
+                                $rootScope.pageTitle += 'Computer Services';
                                 $scope.$state = $state;
                             }
                         })
@@ -35,7 +35,8 @@ var app = angular.module('mainApp', [
                         })
                         .state('webDesign', {
                             url: '/webDesign',
-                            templateUrl: app.config.viewPath + '/webDesign/index.html'
+                            templateUrl: app.config.viewPath + '/webDesign/index.html',
+                            controller: 'webDesignCtrl'
                         })
                         .state('webDesign.about', {
                             url: '/about',

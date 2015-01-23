@@ -1,5 +1,4 @@
-app.controller('webDesignCtrl', function($scope, $stateParams) {
+app.controller('webDesignCtrl', function($scope, $stateParams, $rootScope) {
     $scope.parms = $stateParams;
-    $scope.firstName="John",
-    $scope.lastName="Doe";
+    $rootScope.pageTitle += 'Web Design Solutions';
 });
