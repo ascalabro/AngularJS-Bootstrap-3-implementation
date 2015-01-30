@@ -508,3 +508,11 @@ text-decoration: underline;
     cursor: pointer;
     cursor: hand;
 }
+
+.media-box {
+    min-height: 95px;
+}
+
+.listing-box {
+    min-height: 275px;
+}
