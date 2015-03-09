@@ -6378,6 +6378,10 @@ button.close {
   display: none !important;
 }
 @media (max-width: 767px) {
+  .nav-tabs > li {
+    display:block;
+    float:none;
+  }
   .visible-xs {
     display: block !important;
   }

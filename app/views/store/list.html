@@ -1,4 +1,9 @@
-<div class="row panel-group" ng-repeat="listing in listings| inSlicesOf:3">
+<!-- Begin breadcrumb container !-->
+<div class="panel-heading">
+    <ul class="breadcrumb"> <li><a href="#">All Listings</a></li> <li class="active">{{categoryName}}</li> </ul>
+</div>
+<!-- End breadcrumb container !-->
+<div class="row panel-body" ng-repeat="listing in listings| inSlicesOf:3">
     <div class="col-sm-6 col-md-4" ng-repeat="listing in listing">
         <div class="thumbnail listing-box">
             <img width="100" ng-src="{{listing.default_img}}" alt="...">
